@@ -87,7 +87,6 @@ p u {
 .form input[type="text"],
 .form input[type="email"],
 .form select {
-
     width: 100%;
     padding: 6px;
     font-size: 14px;
@@ -100,7 +99,6 @@ p u {
 
     box-shadow: inset 3px 3px 6px #d1d5d8,
         inset -3px -3px 6px #ffffff;
-
 }
 
 input[type="radio"] {
