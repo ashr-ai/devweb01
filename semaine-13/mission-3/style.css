@@ -1,0 +1,51 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.s1 {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+}
+
+.col {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.text {
+    flex: 0 0 60%;
+}
+
+.img {
+    flex: 0 0 40%;
+}
+
+.img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.s2 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+div h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
