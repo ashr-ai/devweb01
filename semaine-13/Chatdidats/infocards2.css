@@ -1,0 +1,65 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+img {
+    border-radius: 20px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    /* background-color: aqua; */
+    width: 300px;
+
+}
+
+/* p, h2, h4 {
+    margin: 0;
+} */
+
+h2 {
+    text-align: center;
+    font-size: 42px;
+}
+
+h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+
+}
+
+.exercice {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.grille {
+    /* width: 300px; */
+    margin-inline: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 30px;
+    
+}
+
+.single-card {
+    background-color: rgb(234, 223, 223);
+    padding: 28px;
+    border: 1px solid rgba(0, 0, 0, 0.345);
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+    max-width: 300px;
+
+}
+
+.chat3 {
+    object-position: 0 0;
+}
+
+.chat4 {
+    object-position: 0 0;
+}

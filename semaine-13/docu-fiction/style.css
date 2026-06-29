@@ -1,0 +1,332 @@
+@font-face {
+    font-family: Ghibli-Bold;
+    src: url("Eyad\ Al-Samman\ -\ Ghibli-Bold.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Ghibli;
+    src: url("Eyad\ Al-Samman\ -\ Ghibli.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Cthulhumbus;
+    src: url("JMH\ Cthulhumbus\ UG.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: Zenlith;
+    src: url("zenlith-trial.regular.ttf") format("truetype");
+}
+
+/*Structure*/
+.index {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    min-width: 600px;
+}
+
+.header-index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 550px;
+    text-align: center;
+}
+
+.page-index ul {
+    text-align: left;
+}
+
+.ss-index {
+    font-style: italic;
+    font-size: larger;
+    max-width: auto;
+}
+
+.menu-index {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    padding: 30px;
+}
+
+.m-i2 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.footer-index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+.page {
+    width: 800px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-inline: auto;
+}
+
+.page img {
+    aspect-ratio: 4/3;
+}
+
+footer {
+    text-align: center;
+}
+
+/*Style*/
+body {
+    background-color: #f2f1f1;
+    color: #515151;
+    font-size: 16px;
+}
+
+.logo_titre {
+    max-width: 350px;
+    border-radius: 6%;
+    margin-top: 75px;
+}
+
+.logo {
+    max-width: 100px;
+}
+
+.page img {
+    max-width: 300px;
+}
+
+.menu-index {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu-index p, .menu p {
+    font-weight: bold;
+}
+
+.m-i2 a, .menu a, .ressources p a {
+    color: #515151;
+    text-decoration: none;
+}
+
+.m-i2 a:hover, .menu a:hover, .ressources p a:hover {
+    color: rgb(125, 125, 125);
+}
+
+
+
+
+
+/** Fonts **/
+.ghiblifont h1, 
+.ghiblifont h2, 
+.ghiblifont h3, 
+.ghiblifont h4 {
+    font-family: Ghibli-Bold;
+}
+
+.ghiblifont h1 {
+    font-size: 28px;
+}
+
+.ghiblifont header nav,
+.ghiblifont footer {
+    font-family: Ghibli;
+}
+
+.cthufont header nav,
+.cthufont h1, 
+.cthufont h2, 
+.cthufont h3, 
+.cthufont h4,
+.cthufont footer {
+    font-family: Cthulhumbus;
+    font-weight: lighter;
+}
+
+.samufont header nav,
+.samufont h1, 
+.samufont h2, 
+.samufont h3, 
+.samufont footer {
+    font-family: Zenlith;
+    font-weight: lighter;
+}
+
+/**Button **/
+.form button {
+    color: #515151;
+    border-radius: 20px;
+    border: 1px solid #000000;
+    margin: 10px;
+}
+
+.form button:hover {
+    background-color: white;
+}
+
+
+
+
+/** Samuraïs **/
+
+.circle-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  padding: 0;
+  margin: 50px auto;
+  list-style: none;
+  border: 2px solid #ccc; /* Optional: visualizes the circular track */
+  border-radius: 50%;
+}
+
+.circle-container li {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin: -45px;
+  padding: 10px;
+  background: #F2F2F2;
+  color: #515151;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15); ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: 
+    rotate(calc(var(--i) * 72deg)) 
+    translate(150px) 
+    rotate(calc(var(--i) * -72deg));
+}
+
+/** timeline box structure **/
+.timeline {
+    list-style: none;
+    padding: 20px 0 20px;
+    position: relative;
+}
+
+/* .timeline:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 3px;
+    background-color: #eee;
+    left: 50%;
+    margin-left: -1.5px;
+} */
+
+.timeline li {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.timeline li:before,
+.timeline li:after {
+    content: " ";
+    display: table;
+}
+
+.timeline li:after {
+    clear: both;
+}
+
+.timeline li:before,
+.timeline li:after {
+    content: " ";
+    display: table;
+}
+
+/** timeline panels **/
+.timeline li .timeline-panel {
+    width: 46%;
+    float: left;
+    background: #fff;
+    border: 1px solid #d4d4d4;
+    padding: 20px;
+    position: relative;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+}
+
+/** timeline content **/
+
+.tl-heading h4 {
+    margin: 0;
+    color: #334343;
+}
+
+.tl-body p,
+.tl-body ul {
+    margin-bottom: 0;
+}
+
+.tl-body>p+p {
+    margin-top: 5px;
+}
+
+/** panel **/
+.timeline li .timeline-panel.noarrow:before,
+.timeline li .timeline-panel.noarrow {
+    top: 0;
+    right: 0;
+    display: none;
+    border: 0;
+}
+
+.timeline li.timeline-inverted .timeline-panel {
+    float: right;
+}
+
+.timeline li.timeline-inverted .timeline-panel:before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+}
+
+.timeline li.timeline-inverted .timeline-panel:after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+}

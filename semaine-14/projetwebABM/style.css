@@ -1,0 +1,18 @@
+:root {
+  /* COULEURS PRINCIPALES */
+  --couleur-texte:        #3D2B1F;
+  --couleur-accent:       #C4622D;
+  --couleur-secondaire:   #2E5E4E;
+  --couleur-fond:         #F5F0E8;
+  --couleur-blanc:        #FFFFFF;
+
+  /* COULEURS DE SUPPORT */
+  --couleur-fond-alt:     #F2E8DC;
+  --couleur-texte-doux:   #7A4A2E;
+  --couleur-bordure:      #E8D5C4;
+  --couleur-sombre:       #1A1A18;
+
+  /* TYPOGRAPHIES */
+  --typo-titre:   'NOM-POLICE-TITRES', serif;
+  --typo-corps:   'NOM-POLICE-CORPS', sans-serif;
+}
