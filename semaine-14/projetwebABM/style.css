@@ -1,18 +1,230 @@
 :root {
   /* COULEURS PRINCIPALES */
-  --couleur-texte:        #3D2B1F;
-  --couleur-accent:       #C4622D;
-  --couleur-secondaire:   #2E5E4E;
-  --couleur-fond:         #F5F0E8;
-  --couleur-blanc:        #FFFFFF;
+  --couleur-texte: #3D2B1F;
+  --couleur-accent: #C4622D;
+  --couleur-secondaire: #2E5E4E;
+  --couleur-fond: #F5F0E8;
+  --couleur-blanc: #FFFFFF;
 
   /* COULEURS DE SUPPORT */
-  --couleur-fond-alt:     #F2E8DC;
-  --couleur-texte-doux:   #7A4A2E;
-  --couleur-bordure:      #E8D5C4;
-  --couleur-sombre:       #1A1A18;
+  --couleur-fond-alt: #F2E8DC;
+  --couleur-texte-doux: #7A4A2E;
+  --couleur-bordure: #E8D5C4;
+  --couleur-sombre: #1A1A18;
 
   /* TYPOGRAPHIES */
-  --typo-titre:   'NOM-POLICE-TITRES', serif;
-  --typo-corps:   'NOM-POLICE-CORPS', sans-serif;
+  --typo-titre: "Baskervville", serif;
+  --typo-corps: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: var(--typo-corps);
+  overflow-y: scroll
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--typo-titre);
+}
+
+a {
+    color: var(--couleur-accent);
+    text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 50px
+}
+
+header img {
+  width: 200px;
+}
+
+.headervitrine {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero {
+  position: relative;
+  background-image: url(/images/photo-paysage-boreal.jpg);
+  justify-content: center;
+  text-align: center;
+  height: 200px;
+
+}
+
+/* .hero-contenu {
+  position: absolute
+  
+} */
+
+.hero-contenu p {
+  color: var(--couleur-texte-doux);
+
+}
+
+.bouton-cta {
+  background-color: var(--couleur-fond-alt);
+  border: 3px solid var(--couleur-bordure);
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.services {
+  margin-top: 150px;
+}
+
+.grille-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.carte-service {
+  margin: 20px;
+}
+
+.carte-service img {
+  aspect-ratio: 1/1;
+  max-width: 100px;
+
+}
+
+/* .apropos {
+
+} */
+
+.apropos-contenu {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 150px;
+}
+
+.apropos-texte {
+  flex: 1;
+}
+
+.apropos-image {
+  width: 400px;
+}
+
+.equipe {
+  margin-top: 150px;
+}
+
+.grille-equipe {
+  margin-top: 50px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  row-gap: 110px;
+}
+
+/* .carte-membre {
+  
+} */
+
+.carte-membre img {
+  aspect-ratio: 4/3;
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  object-fit: cover;
+}
+
+.carte2 {
+  object-position: 0 25%;
+}
+
+.carte4 {
+  object-position: 50% 22%;
+}
+
+.footer-contenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 150px;
+  background-color: var(--couleur-fond-alt);
+  min-height: 50px
+}
+
+.footer-logo {
+  width: 100px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;  
+}
+
+address { 
+  text-align: right;
+  font-size: smaller;
+}
+
+address a {
+  color: var(--couleur-secondaire)
+}
+
+.page-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 250px;
+}
+
+.formulaire-contact {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;    
+}
+
+input[type="text"], input[type="email"], textarea {
+  font-family: var(--typo-corps);
+  color: var(--couleur-texte);
+  border-radius: 10px;
+  width: 100%;
+  border: 1px solid var(--couleur-bordure);
+  box-sizing: border-box;
+  padding: 12px;
+}
+
+button {
+  margin: 10px 10px 0 0;
+    background-color: var(--couleur-fond-alt);
+    color: var(--couleur-texte);
+    border: 1px solid var(--couleur-bordure);
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+button:hover {
+  background-color: var(--couleur-blanc);
 }

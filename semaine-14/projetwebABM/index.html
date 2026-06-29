@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,16 @@
   <!-- Remplacer les href ci-dessous par les liens fournis dans le kit -->
   <!-- À répéter pour d'autres type à inclure, mais pas besoin de répéter le lien 'preconnect' -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="tyto 1 de google" rel="stylesheet">
-  <link href="typo 2 de google" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
 
   <!-- FEUILLE DE STYLE EXTERNE -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- ============================================================
@@ -29,22 +34,20 @@
   ============================================================ -->
   <header>
     <a href="index.html">
-      <img src="images/abm-logo.png" alt="Logo Atelier Boréal Médias">
+      <img src="images/boreal-media-logo.png" alt="Logo Atelier Boréal Médias">
     </a>
-   <!-- ===========================================================
+    <!-- ===========================================================
       
-          ===================================================== --> 
-    <nav>
-      <ul>
-        <li><a href="abm-index.html">Accueil</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#equipe">Équipe</a></li>
-        <li><a href="#apropos">À propos</a></li>
-        <li><a href="">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+          ===================================================== -->
+    <div class="headervitrine">
+      <a href="index.html">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#apropos">À propos</a>
+      <a href="#equipe">Équipe</a>
+      <a href="abm-contact.html">Contact</a>
+    </div>
 
+  </header>
 
   <!-- ============================================================
     SECTION 2 : HERO / BANNIÈRE
@@ -55,11 +58,11 @@
   <section class="hero">
     <div class="hero-contenu">
       <h1>Créer. Produire. Connecter.</h1>
-      <p>Atelier Boréal Médias accompagne les organisations dans leur transformation numérique, de la création de contenu à la gestion de leur présence en ligne.</p>
+      <p>Atelier Boréal Médias accompagne les organisations dans leur transformation numérique, de la création de
+        contenu à la gestion de leur présence en ligne.</p>
       <a href="#services" class="bouton-cta">Découvrir nos services</a>
     </div>
   </section>
-
 
   <!-- ============================================================
     SECTION 3 : SERVICES — 3 CARTES ÉGALES
@@ -76,26 +79,28 @@
       <div class="carte-service">
         <img src="images/icone-contenu.png" alt="Icone production de contenu">
         <h3>Production de contenu</h3>
-        <p>Nous concevons et produisons des contenus visuels et rédactionnels adaptés à chaque plateforme, des médias sociaux aux campagnes de marque complètes.</p>
+        <p>Nous concevons et produisons des contenus visuels et rédactionnels adaptés à chaque plateforme, des médias
+          sociaux aux campagnes de marque complètes.</p>
       </div>
 
       <!-- Carte service 2 -->
       <div class="carte-service">
         <img src="images/icone-strategie.png" alt="Icone stratégie numérique">
         <h3>Stratégie numérique</h3>
-        <p>Notre équipe analyse votre présence en ligne et développe des stratégies concrètes pour rejoindre vos audiences et atteindre vos objectifs de croissance.</p>
+        <p>Notre équipe analyse votre présence en ligne et développe des stratégies concrètes pour rejoindre vos
+          audiences et atteindre vos objectifs de croissance.</p>
       </div>
 
       <!-- Carte service 3 -->
       <div class="carte-service">
         <img src="images/icone-support.png" alt="Icone support technologique">
         <h3>Support technologique</h3>
-        <p>Nous assurons la gestion et le soutien technique de vos outils numériques, de votre site web à vos systèmes internes, pour que votre équipe reste productive.</p>
+        <p>Nous assurons la gestion et le soutien technique de vos outils numériques, de votre site web à vos systèmes
+          internes, pour que votre équipe reste productive.</p>
       </div>
 
     </div>
   </section>
-
 
   <!-- ============================================================
     SECTION 4 : À PROPOS
@@ -107,15 +112,17 @@
     <div class="apropos-contenu">
       <div class="apropos-texte">
         <h2>Une équipe ancrée dans le numérique</h2>
-        <p>Fondé à Montréal, Atelier Boréal Médias est un studio numérique indépendant qui travaille avec des organisations de toutes tailles. Nous combinons expertise technique et sensibilité créative pour livrer des projets qui ont un impact réel.</p>
-        <p>Notre approche est simple: comprendre votre contexte, proposer des solutions adaptées, et accompagner leur mise en oeuvre avec rigueur. Chaque projet est une collaboration, pas une simple commande.</p>
+        <p>Fondé à Montréal, Atelier Boréal Médias est un studio numérique indépendant qui travaille avec des
+          organisations de toutes tailles. Nous combinons expertise technique et sensibilité créative pour livrer des
+          projets qui ont un impact réel.</p>
+        <p>Notre approche est simple: comprendre votre contexte, proposer des solutions adaptées, et accompagner leur
+          mise en oeuvre avec rigueur. Chaque projet est une collaboration, pas une simple commande.</p>
       </div>
-      <div class="apropos-image">
-        <img src="images/image-apropos.jpg" alt="Équipe Atelier Boréal Médias au travail">
+      <div>
+        <img class="apropos-image" src="images/photo-bureau-equipe2.png" alt="Équipe Atelier Boréal Médias au travail">
       </div>
     </div>
   </section>
-
 
   <!-- ============================================================
     SECTION 5 : ÉQUIPE — GRILLE 2x2
@@ -131,35 +138,34 @@
 
       <!-- Membre 1 -->
       <div class="carte-membre">
-        <img src="images/photo-sophie.jpg" alt="Photo de Sophie Tremblay">
+        <img class="carte1" src="images/photo-sophie.jpg" alt="Photo de Sophie Tremblay">
         <h3>Sophie Tremblay</h3>
         <p>Directrice de création</p>
       </div>
 
       <!-- Membre 2 -->
       <div class="carte-membre">
-        <img src="images/photo-marc.jpg" alt="Photo de Marc-Antoine Lefebvre">
+        <img class="carte2" src="images/photo-marc.jpg" alt="Photo de Marc-Antoine Lefebvre">
         <h3>Marc-Antoine Lefebvre</h3>
         <p>Développeur web senior</p>
       </div>
 
       <!-- Membre 3 -->
       <div class="carte-membre">
-        <img src="images/photo-yara.jpg" alt="Photo de Yara Benali">
+        <img class="carte3" src="images/photo-yara.jpg" alt="Photo de Yara Benali">
         <h3>Yara Benali</h3>
         <p>Stratège en contenu numérique</p>
       </div>
 
       <!-- Membre 4 -->
       <div class="carte-membre">
-        <img src="images/photo-carlos.jpg" alt="Photo de Carlos Reyes">
+        <img class="carte4" src="images/photo-carlos.jpg" alt="Photo de Carlos Reyes">
         <h3>Carlos Reyes</h3>
         <p>Technicien en support TI</p>
       </div>
 
     </div>
   </section>
-
 
   <!-- ============================================================
     SECTION 6 : FOOTER
@@ -170,18 +176,16 @@
   <footer>
     <div class="footer-contenu">
 
-      <div class="footer-logo">
-        <img src="images/logo.png" alt="Logo Atelier Boréal Médias">
-      </div>
+
+      <img class="footer-logo" src="images/abm-logo.png" alt="Logo Atelier Boréal Médias">
+
 
       <nav class="footer-nav">
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#equipe">Équipe</a></li>
-          <li><a href="#apropos">À propos</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <a href="index.html">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#apropos">À propos</a>
+        <a href="#equipe">Équipe</a>
+        <a href="abm-contact.html">Contact</a>
       </nav>
 
       <address>
@@ -194,6 +198,6 @@
     </div>
   </footer>
 
-
 </body>
+
 </html>
