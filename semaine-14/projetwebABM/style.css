@@ -32,8 +32,8 @@ h1, h2, h3, h4 {
 }
 
 a {
-    color: var(--couleur-accent);
-    text-decoration: none;
+  color: var(--couleur-accent);
+  text-decoration: none;
 }
 
 header {
@@ -71,7 +71,6 @@ header img {
 
 .hero-contenu p {
   color: var(--couleur-texte-doux);
-
 }
 
 .bouton-cta {
@@ -98,7 +97,6 @@ header img {
 .carte-service img {
   aspect-ratio: 1/1;
   max-width: 100px;
-
 }
 
 /* .apropos {
@@ -194,16 +192,16 @@ address a {
 }
 
 .formulaire-contact {
-    border: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    border-radius: 10px;
-    font-size: 14px;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px;    
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;    
 }
 
 input[type="text"], input[type="email"], textarea {
@@ -218,11 +216,11 @@ input[type="text"], input[type="email"], textarea {
 
 button {
   margin: 10px 10px 0 0;
-    background-color: var(--couleur-fond-alt);
-    color: var(--couleur-texte);
-    border: 1px solid var(--couleur-bordure);
-    padding: 6px 12px;
-    border-radius: 6px;
+  background-color: var(--couleur-fond-alt);
+  color: var(--couleur-texte);
+  border: 1px solid var(--couleur-bordure);
+  padding: 6px 12px;
+  border-radius: 6px;
 }
 
 button:hover {

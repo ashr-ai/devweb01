@@ -143,8 +143,211 @@ body {
     color: rgb(125, 125, 125);
 }
 
+/** Ghibli **/
+.films-iconiques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 10px;
+}
+
+#totoro {
+    color: #2B6E88;
+}
+
+#mononoke {
+    color: #F20016;
+}
+
+#chihiro {
+    color: #F99383;
+}
+
+#chateau {
+    color: #342419;
+}
+
+.article {
+	margin: 0;
+	padding: 1rem;
+  box-sizing: border-box;
+}
+
+article {
+	max-width: 70rem;
+	margin: 0 auto;
+	border: 0.18rem solid lightgrey;
+	padding: clamp(1rem, 2vw, 3rem);
+	border-radius: 0.5rem;
+}
+
+dl {
+	margin: 0;
+}
+
+dl {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+	gap: 1rem;
+}
+
+dl > div {
+	background: #55CB58;
+	padding: 1rem;
+}
+
+dl > div:nth-child(4n - 2) {
+	background: #52a3de;
+}
+
+dl > div:nth-child(4n - 1) {
+	background: #D4E1B5;
+}
+
+dl > div:nth-child(4n) {
+	background: #9AA9B9;
+}
+
+dl > div:last-child {
+    background: #EA9491;
+}
+
+dt {
+	font-weight: 700;
+	font-size: 1.3rem;
+}
+
+dd {
+	margin: 0;
+}
+
+.list-container ul {
+  display: table-row;
+  list-style: none;
+}
+
+.list-container li {
+  display: table-row;
+}
+  
+.list-container li::before {
+  display: table-cell;
+  text-align: right;
+  content: "+";
+  font-size: 1em;
+  font-weight: bold;
+  color: #FF404C;
+  padding-right: 12px;
+}
+
+.content-container {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-container {
+  width: 80%;
+}
+
+.list-container ul {
+  margin: 0;
+  padding: 0;
+}
+
+.list-container li:hover {
+  background-color: rgba(256,256,256,0.1);
+}
+.list-container li:before:hover {
+  background-color: rgba(256,256,256,0.1);
+}
+.list-container li:not(:first-of-type)::before {
+  padding-top: 12px;
+}
+
+/** Cthulhu **/
+.horreur-cosmique ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+.horreur-cosmique ul li {
+    width: 200px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    margin: 1.5em;
+    padding: 1em;
+    background: rgb(43, 43, 43);
+    position: relative;
+    color: white;
+    border-radius: 5px;
+}
+.horreur-cosmique ul li::before,
+.horreur-cosmique ul li::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 5px;
+    width: 105%;
+    transition: all 0.4s;
+}
+.horreur-cosmique ul li::before {
+    left: 0%;
+    height: 130%;
+    background: linear-gradient(to right, #061C1E, #46848A);
+}
+.horreur-cosmique ul li::after {
+    left: -10%;
+    height: 120%;
+    background: #ffffff56;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.164);
+}
+.horreur-cosmique ul li:hover::before {
+    transform: translateX(-2.5%);
+}
+.horreur-cosmique ul li:hover::after {
+    transform: translateX(15%);
+}
 
 
+.influence ol {
+  list-style: none;
+  counter-reset: fuel-awesome-counter;
+}
+
+.influence ol li {
+  counter-increment: fuel-awesome-counter;
+  position: relative;
+}
+
+.influence ol li::before {
+  content: counter(fuel-awesome-counter);
+  color: #fff;
+  background: #295966;
+  width: 1.2rem;
+  height: 1.2rem;
+  line-height: 1.6;
+  display: inline-block;
+  text-align: center;
+  font-size: 0.8em;
+  border-radius: 1em;
+  margin-right: 0.5em;
+  position: absolute;
+  left: -2rem;
+  top: -0.1em;
+}
 
 
 /** Fonts **/
