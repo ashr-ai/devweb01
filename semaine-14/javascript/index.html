@@ -50,13 +50,17 @@
         
         let animaux = ["Chat", "Chien", "Lapin", "Piranha", "Requin", "Béluga", "Coq", "Brebis", "Gorille", "Chimpanzé", "Papillon" ];
 
-        // for (i = 0; i < animaux.length; i++) {
-        //     console.log(animaux[i]);
-        // }
-
-        for (i = 5; i < animaux.length; i= i -1) {
+        for (i = 0; i < animaux.length; i++) {
             console.log(animaux[i]);
         }
+
+        animaux.forEach(animal => {
+            console.log(animal);
+        })
+
+        // for (i = 5; i < animaux.length; i= i -1) {
+        //     console.log(animaux[i]);
+        // }
     
     </script>
 
