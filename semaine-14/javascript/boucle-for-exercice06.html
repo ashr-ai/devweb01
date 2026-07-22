@@ -1,0 +1,30 @@
+<body>
+    <div id="boite" style="background-color: rgb(230, 120, 38); width: 100px; height: 100px">
+    </div>
+
+    <br>
+
+    <button id="monBouton">Changer la couleur</button>
+
+    <script>
+        let Caracteres = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"];
+        let monBouton = document.querySelector("#monBouton");
+        
+        monBouton.addEventListener("click", () => {
+            let couleur = "#"
+            for (let i = 0; i < 6; i++) {
+                let hex = Math.floor(Math.random() * Caracteres.length)
+                couleur = couleur + Caracteres[hex]
+            }
+            boite.style.backgroundColor = couleur
+        });
+
+        /*
+        vous devez changer la couleur de la boite.
+        En cliquant sur le bouton, JS doit parcourir
+        le tableau de façon aléatoire et choisir 6 caractères
+        afin de construire un code de couleur "hex".
+        */
+    </script>
+</body>
+

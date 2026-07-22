@@ -1,18 +1,44 @@
 <body>
   <script>
-    let original = [5, 10, 15];
-    let copie = [];
+    // let original = [5, 10, 15];
+    // let original = [5, 10, 15, 42, 17, 88, 6, 63, 29, 74, 12, 95, 36, 51, 80];
+    // let copie = [];
 
     // À l'aide d'une boucle, copier chaque valeur de original dans copie
     // afficher les deux tableaux
 
-    for (let i = 0; i < original.length; i++) {
-      copie = copie + original[i]
-      if (i < 2) {
-        copie = copie + ","
+    // for (let i = 0; i < original.length; i++) {
+    //   copie = copie + original[i]
+    //   if (i < 2) {
+    //     copie = copie + ","
+    //   }
+    // }
+    // console.log(original + " | " + copie)
+
+    // for (let i = 0; i < original.length; i++) {
+    //   if (original[i] % 2 == 0) {
+    //     copie = copie + original[i] + ","
+    //   } else {
+    //     tab2 = (typeof tab2 !== 'undefined' ? tab2 : []).concat(original[i]);
+    //   }
+    // }
+    // console.log("nombres pairs : " + copie);
+    // console.log("nombres impairs : " + tab2);
+    
+    let nbre = [];
+
+    for (let i = 1; i < 101; i++) {
+      if (i % 3 == 0 && i % 5 == 0) {
+        nbre = "FIZZBUZZ"
+      } else if (i % 3 == 0) {
+        nbre = "FIZZ"
+      } else if (i % 5 == 0) {
+        nbre = "BUZZ"
+      } else {
+        nbre = i
       }
+      console.log(nbre)
     }
-      console.log(original + " | " + copie)
 
   </script>
 </body>
