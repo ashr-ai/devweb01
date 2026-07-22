@@ -1,0 +1,18 @@
+<body>
+  <script>
+    let original = [5, 10, 15];
+    let copie = [];
+
+    // À l'aide d'une boucle, copier chaque valeur de original dans copie
+    // afficher les deux tableaux
+
+    for (let i = 0; i < original.length; i++) {
+      copie = copie + original[i]
+      if (i < 2) {
+        copie = copie + ","
+      }
+    }
+      console.log(original + " | " + copie)
+
+  </script>
+</body>
