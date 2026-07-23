@@ -5,18 +5,90 @@
     <br>
 
     <button id="monBouton">Changer la couleur</button>
+    <button id="boutonRouge" class="boutonCanal">Changer le rouge</button>
+    <button id="boutonVert" class="boutonCanal">Changer le vert</button>
+    <button id="boutonBleu" class="boutonCanal">Changer le bleu</button>
 
     <script>
-        let Caracteres = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"];
+        const Caracteres = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"];
+        const REGEX_ROUGE = /rgb\((\d*),/;
+        const REGEX_VERT = /rgb\(\d*,\s(\d*),/;
+        const REGEX_BLEU = /rgb\(.* (\d*)\)/;
+
+        let boite = document.querySelector("#boite");
         let monBouton = document.querySelector("#monBouton");
+        let boutonsCouleur = document.querySelectorAll(".boutonCanal")
+
+        let couleur = boite.style.backgroundColor;
+        console.log(couleur)
+
+        // Prend une chaine de caractères représentant une couleur de tybe RGB et applique un regex pour en extraire un des trois canaux seulement. Retourne ce canal en nombre hexadécimal.
+        // @param couleurATraiter String : la couleur dont il faut extraire le canal
+        // @param regexCanal regex : l'expression rationnelle servant à extraire le canal
+        // @return couleurEnHexNumber
+
+        function extraireRGBenHex(couleurATraiter, regexCanal) {
+            return Number(couleurATraiter.match(regexCanal)[1]).toString(16);
+        }
         
-        monBouton.addEventListener("click", () => {
-            let couleur = "#"
-            for (let i = 0; i < 6; i++) {
-                let hex = Math.floor(Math.random() * Caracteres.length)
-                couleur = couleur + Caracteres[hex]
+        // Assigne une nouvelle couleur aléatoire à la boite
+        // @return nouvelleCouleur string : 
+        
+        
+        function genererNouvelleCouleur(longueur) {
+            let nouvelleCouleur = "";
+            let nouveauCanal = ""
+
+            for (let i = 0; i < longueur; i++) {
+                let indexCaractere = Math.floor(Math.random() * Caracteres.length)
+                nouveauCanal += Caracteres[indexCaractere];
             }
-            boite.style.backgroundColor = couleur
+
+            return nouvelleCouleur;
+        }
+
+        // Premier exercice
+        monBouton.addEventListener("click", () => {
+            let nouvelleCouleur = "#";
+
+            for (let i = 0; i < 6; i++) {
+                let hex = Math.floor(Math.random() * Caracteres.length);
+                nouvelleCouleur = nouvelleCouleur + Caracteres[hex];
+            }
+            boite.style.backgroundColor = nouvelleCouleur;
+        });
+        
+        /*---Deuxième exercice---*/
+
+        boutonsCouleur.forEach(monBouton => {
+            monBouton.addEventListener('click', (event) => {
+
+                let boutonId = event.target.id;
+                let nouvelleCouleur = "#";
+                let nouveauCanal = genererNouvelleCouleur(2);
+
+                let rouge = extraireRGBenHex(couleur, REGEX_ROUGE);
+                let vert = extraireRGBenHex(couleur, REGEX_VERT);
+                let bleu = extraireRGBenHex(couleur, REGEX_BLEU);
+
+
+                switch (boutonId) {
+                    case "boutonRouge":
+                        nouvelleCouleur += nouveauCanal + vert + bleu;    
+                        break;
+
+                    case "boutonVert":
+                        nouvelleCouleur += rouge + nouveauCanal + bleu;  
+                        break;
+
+                    case "boutonBleu":
+                        nouvelleCouleur += rouge + vert + nouveauCanal;
+                        break;
+                }
+
+                boite.style.backgroundColor = String(nouvelleCouleur);
+                console.log(nouvelleCouleur);
+            })
         });
 
         /*
