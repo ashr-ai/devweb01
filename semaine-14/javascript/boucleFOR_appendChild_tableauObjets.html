@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS101 semaine-14 — Créer des éléments HTML</title>
+</head>
+
+<body>
+  <h1>JS101 sem-14 — Créer des éléments HTML</h1>
+
+
+  <script>
+    let animaux = [
+      { type: "Chat", couleur: "noir" },
+      { type: "Chien", couleur: "brun" },
+      { type: "Lapin", couleur: "rose" }
+    ];
+
+    const nouvelElement = document.createElement("ul");
+    document.body.appendChild(nouvelElement);
+
+    // const liste = document.createElement("li");
+    // liste.textContent = "premier élément";
+
+    for (i = 0; i < animaux.length; i++) {
+
+      let li = document.createElement("li");
+
+      li.textContent = (animaux[i].type + " " + animaux[i].couleur);
+
+      nouvelElement.appendChild(li);
+
+      console.log(li.textContent);
+
+    }
+
+
+
+  </script>
+</body>
+
+</html>
