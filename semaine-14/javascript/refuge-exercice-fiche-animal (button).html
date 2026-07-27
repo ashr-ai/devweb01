@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refuge, Fiche animal (exercice)</title>
+  <style>
+    :root {
+      --color-bg: #f5f6fa;
+      --color-card: #ffffff;
+      --color-primary: #1d3557;
+      --color-accent: #457b9d;
+      --color-danger: #e63946;
+      --color-success: #2a9d8f;
+      --color-text: #2b2d42;
+      --color-border: #dcdde1;
+      --radius: 8px;
+      --spacing: 1rem;
+    }
+
+    .badge {
+      padding: 5px;
+      border: 2px solid var(--color-border);
+      border-radius: 20px;
+      color: var(--color-text);
+      background-color: var(--color-bg)
+    }
+
+    .badge-disponible {
+      background-color: var(--color-success);
+    }
+
+    .badge-adopte {
+      background-color: var(--color-danger);
+    }
+
+    .page-wrapper {
+      background-color: var(--color-bg);
+      border-radius: 25px;
+      border: 2px solid var(--color-accent);
+      display: flex;
+      flex-direction: column;
+      height: 300px;
+      padding: 20px;
+      width: 400px;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <span id="nom-animal">Chargement...</span>
+    <span id="badge-adoption" class="badge">...</span>
+  </header>
+
+  <main>
+    <p>Type : <span id="type-animal">...</span></p>
+    <p>Couleur : <span id="couleur-animal">...</span></p>
+  </main>
+
+  <script>
+    let animaux = [
+      { nom: "Milo", type: "Chien", couleur: "Brun", disponibleAdoption: true },
+      { nom: "Luna", type: "Chat", couleur: "Noir", disponibleAdoption: false },
+      { nom: "Charlie", type: "Chien", couleur: "Blanc", disponibleAdoption: true },
+      { nom: "Bella", type: "Lapin", couleur: "Gris", disponibleAdoption: true },
+      { nom: "Simba", type: "Chat", couleur: "Orange", disponibleAdoption: false },
+      { nom: "Coco", type: "Perroquet", couleur: "Vert", disponibleAdoption: true },
+      { nom: "Rex", type: "Chien", couleur: "Noir et blanc", disponibleAdoption: false },
+      { nom: "Pixel", type: "Chat", couleur: "Gris et blanc", disponibleAdoption: true }
+    ];
+
+    let nom = document.querySelector("#nom-animal")
+    let type = document.querySelector("#type-animal")
+    let couleur = document.querySelector("#couleur-animal")
+    let adoption = document.querySelector("#badge-adoption")
+
+    const header = document.querySelector("header");
+    const main = document.querySelector("main");
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "page-wrapper";
+    header.parentNode.insertBefore(wrapper, header);
+
+    wrapper.appendChild(header);
+    wrapper.appendChild(main);
+
+    const wrap2 = document.createElement("div");
+    wrap2.className = "btn-wrapper"
+
+    const btnPrecedent = document.createElement("button");
+    btnPrecedent.textContent = "←";
+
+    const btnSuivant = document.createElement("button");
+    btnSuivant.textContent = "→";
+
+    wrap2.appendChild(btnPrecedent);
+    wrap2.appendChild(btnSuivant);
+
+    wrapper.appendChild(wrap2);
+
+
+    let i = 0;
+
+    function afficherAnimal() {
+      let animal = animaux[i];
+
+      nom.textContent = animal.nom;
+      type.textContent = animal.type;
+      couleur.textContent = animal.couleur;
+
+      adoption.classList.remove("badge-disponible", "badge-adopte");
+
+      if (animal.disponibleAdoption) {
+        adoption.textContent = "Disponible pour adoption";
+        adoption.classList.add("badge-disponible");
+      } else {
+        adoption.textContent = "Déjà adopté";
+        adoption.classList.add("badge-adopte");
+      }
+    }
+
+    afficherAnimal();
+
+    btnSuivant.addEventListener("click", () => {
+      i++;
+      if (i >= animaux.length) {
+        i = 0;
+      }
+      afficherAnimal();
+    });
+
+    btnPrecedent.addEventListener("click", () => {
+      i--;
+      if (i < 0) {
+        i = animaux.length - 1;
+      }
+      afficherAnimal();
+    });
+  </script>
+
+</body>
+
+</html>
