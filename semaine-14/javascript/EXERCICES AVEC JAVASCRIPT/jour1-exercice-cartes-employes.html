@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ABM, Répertoire des employés (exercice jour 1)</title>
+  <style>
+    :root {
+      --color-bg: #f5f6fa;
+      --color-card: #ffffff;
+      --color-primary: #1d3557;
+      --color-accent: #457b9d;
+      --color-danger: #e63946;
+      --color-success: #2a9d8f;
+      --color-warning: #e9a13b;
+      --color-text: #2b2d42;
+      --color-border: #dcdde1;
+      --radius: 8px;
+      --spacing: 1rem;
+    }
+
+    div {
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 15px;
+      width: 400px;
+    }
+
+    div div {
+      background-color: var(--color-card);
+      border-radius: 8px;
+      border: 2px solid var(--color-primary);
+      margin: 10px;
+    }
+
+    .actif {
+      color: var(--color-success);
+      font-weight: 900;
+    }
+
+    .conge {
+      color: var(--color-warning);
+      font-weight: 900;
+    }
+
+    .absent {
+      color: var(--color-danger);
+      font-weight: 900;
+    }
+
+    /* À toi de continuer le style à partir d'ici si tu veux.
+     Les variables ci-dessus sont déjà prêtes à être utilisées avec var(--nom-variable). */
+  </style>
+</head>
+
+<body>
+
+  <h1>Répertoire des employés, Atelier Boréal Médias</h1>
+
+  <!-- Ta mission : générer une carte par employé À L'INTÉRIEUR de ce conteneur,
+     uniquement en JavaScript. Ne touche pas au HTML directement. -->
+  <div id="conteneur-employes"></div>
+
+  <script src="jour1-exercice-cartes-employes.js">
+
+  </script>
+
+</body>
+
+</html>

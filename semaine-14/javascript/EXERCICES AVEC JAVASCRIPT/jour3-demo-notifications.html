@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>ABM, Intranet, notifications (démo jour 3)</title>
+<style>
+  :root {
+    --color-bg: #f5f6fa;
+    --color-card: #ffffff;
+    --color-primary: #1d3557;
+    --color-accent: #457b9d;
+    --color-success: #2a9d8f;
+    --color-danger: #e63946;
+    --color-text: #2b2d42;
+    --color-border: #dcdde1;
+    --radius: 8px;
+    --spacing: 1rem;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: system-ui, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    margin: 0;
+    padding: var(--spacing);
+  }
+  button {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.6rem 1rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+  #zone-notifications {
+    position: fixed;
+    top: var(--spacing);
+    right: var(--spacing);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .toast {
+    background: var(--color-card);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    min-width: 220px;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .toast.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .toast.succes { border-left-color: var(--color-success); }
+  .toast.erreur { border-left-color: var(--color-danger); }
+</style>
+</head>
+<body>
+
+<h1>Intranet ABM</h1>
+<p>Cette démo montre comment créer, afficher, puis retirer un élément du DOM
+   sans jamais réécrire toute la page.</p>
+
+<button id="btn-succes">Simuler un ticket assigné</button>
+<button id="btn-erreur">Simuler une erreur de connexion</button>
+
+<div id="zone-notifications"></div>
+
+<script>
+  const zoneNotifications = document.querySelector("#zone-notifications");
+
+  function afficherNotification(message, type) {
+    // 1. Créer l'élément à partir de rien
+    const toast = document.createElement("div");
+    toast.classList.add("toast", type);
+    toast.textContent = message;
+
+    // 2. L'ajouter au DOM
+    zoneNotifications.appendChild(toast);
+
+    // On force l'apparition en douceur (juste après l'ajout au DOM)
+    requestAnimationFrame(() => toast.classList.add("visible"));
+
+    // 3. Le retirer automatiquement après un délai
+    setTimeout(() => {
+      toast.classList.remove("visible");
+      // On attend la fin de la transition avant de retirer l'élément pour de vrai
+      setTimeout(() => toast.remove(), 200);
+    }, 3000);
+  }
+
+  document.querySelector("#btn-succes").addEventListener("click", () => {
+    afficherNotification("Ticket #104 assigné à Marc Bouchard", "succes");
+  });
+
+  document.querySelector("#btn-erreur").addEventListener("click", () => {
+    afficherNotification("Connexion au serveur Zammad impossible", "erreur");
+  });
+</script>
+
+</body>
+</html>

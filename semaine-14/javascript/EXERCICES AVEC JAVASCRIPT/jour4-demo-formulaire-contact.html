@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>ABM, Contacter le support (démo jour 4)</title>
+<style>
+  :root {
+    --color-bg: #f5f6fa;
+    --color-card: #ffffff;
+    --color-primary: #1d3557;
+    --color-accent: #457b9d;
+    --color-danger: #e63946;
+    --color-success: #2a9d8f;
+    --color-text: #2b2d42;
+    --color-border: #dcdde1;
+    --radius: 8px;
+    --spacing: 1rem;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: system-ui, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    margin: 0;
+    padding: var(--spacing);
+    max-width: 480px;
+  }
+  .champ { margin-bottom: 1rem; }
+  label { display: block; margin-bottom: 0.25rem; font-weight: bold; }
+  input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-family: inherit;
+  }
+  input.erreur, textarea.erreur { border-color: var(--color-danger); }
+  .message-erreur {
+    color: var(--color-danger);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    display: none;
+  }
+  .message-erreur.visible { display: block; }
+  button {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+  }
+  #confirmation {
+    background: var(--color-success);
+    color: white;
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    margin-top: 1rem;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<h1>Contacter le support ABM</h1>
+
+<form id="formulaire-contact" novalidate>
+  <div class="champ">
+    <label for="courriel">Courriel</label>
+    <input type="text" id="courriel" name="courriel">
+    <div class="message-erreur" id="erreur-courriel">Entre une adresse courriel valide.</div>
+  </div>
+
+  <div class="champ">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+    <div class="message-erreur" id="erreur-message">Le message ne peut pas être vide.</div>
+  </div>
+
+  <button type="submit">Envoyer</button>
+</form>
+
+<div id="confirmation">Message envoyé, merci.</div>
+
+<script>
+  const formulaire = document.querySelector("#formulaire-contact");
+  const champCourriel = document.querySelector("#courriel");
+  const champMessage = document.querySelector("#message");
+  const erreurCourriel = document.querySelector("#erreur-courriel");
+  const erreurMessage = document.querySelector("#erreur-message");
+  const confirmation = document.querySelector("#confirmation");
+
+  function courrielEstValide(valeur) {
+    // Validation simple, suffisante pour le contexte du labo
+    return valeur.includes("@") && valeur.includes(".") && valeur.length > 5;
+  }
+
+  formulaire.addEventListener("submit", (evenement) => {
+    // Sans preventDefault, le navigateur rechargerait la page ici
+    evenement.preventDefault();
+
+    let formulaireValide = true;
+
+    if (!courrielEstValide(champCourriel.value)) {
+      champCourriel.classList.add("erreur");
+      erreurCourriel.classList.add("visible");
+      formulaireValide = false;
+    } else {
+      champCourriel.classList.remove("erreur");
+      erreurCourriel.classList.remove("visible");
+    }
+
+    if (champMessage.value.trim() === "") {
+      champMessage.classList.add("erreur");
+      erreurMessage.classList.add("visible");
+      formulaireValide = false;
+    } else {
+      champMessage.classList.remove("erreur");
+      erreurMessage.classList.remove("visible");
+    }
+
+    if (formulaireValide) {
+      confirmation.style.display = "block";
+      formulaire.reset();
+    } else {
+      confirmation.style.display = "none";
+    }
+  });
+</script>
+
+</body>
+</html>

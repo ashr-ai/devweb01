@@ -34,16 +34,22 @@
       background-color: var(--color-danger);
     }
 
-    /* .page-wrapper {
+    .page-wrapper {
       background-color: var(--color-bg);
       border-radius: 25px;
       border: 2px solid var(--color-accent);
       display: flex;
       flex-direction: column;
-      height: 300px;
       padding: 20px;
       width: 400px;
-    } */
+    }
+
+    .page-wrapper>div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
 
     body {
       display: flex;
@@ -98,13 +104,13 @@
       { nom: "Pixel", type: "Chat", couleur: "Gris et blanc", disponibleAdoption: true }
     ];
 
-    // TODO 1 : sélectionne les 4 éléments qu'on doit remplir
-    //          (#nom-animal, #type-animal, #couleur-animal, #badge-adoption)
+    // Les querySelector
     let nom = document.querySelector("#nom-animal")
     let type = document.querySelector("#type-animal")
     let couleur = document.querySelector("#couleur-animal")
     let adoption = document.querySelector("#badge-adoption")
 
+    // Création de wrapper (div qui encadre le tout)
     const header = document.querySelector("header");
     const main = document.querySelector("main");
 
@@ -116,15 +122,11 @@
     wrapper.appendChild(header);
     wrapper.appendChild(main);
 
-    // TODO 2 : injecte le nom, le type et la couleur avec textContent
+    // Remplissage de l'animal vedette
     nom.textContent = `Nom de l'animal : ${animalVedette.nom}`
     type.textContent = animalVedette.type
     couleur.textContent = animalVedette.couleur
 
-    // TODO 3 : selon la valeur de disponibleAdoption, mets à jour le texte du badge
-    //  ("Disponible pour adoption" ou "Déjà adopté") et ajoute la bonne classe
-    //  CSS (badge-disponible ou badge-adopte) à l'élément du badge.
-    //  Indice : if (animalVedette.disponibleAdoption) { ... } else { ... }
     if (animalVedette.disponibleAdoption == true) {
       adoption.textContent = "Disponible pour adoption"
       adoption.classList.add("badge-disponible")
@@ -133,13 +135,20 @@
       adoption.classList.add("badge-adopte")
     }
 
-    const liste = document.createElement("ul");
+    function creerCarteAnimal(animal) {
+      const section = document.createElement("section");
+      section.className = "page-wrapper";
 
-    for (let i = 0; i < animaux.length; i++) {
-      const animal = animaux[i];
-      const item = document.createElement("li");
+      const entete = document.createElement("div");
 
-      item.textContent = `${animal.nom} | ${animal.type} | ${animal.couleur} | `;
+      const nom = document.createElement("span");
+      nom.textContent = `Nom de l'animal : ${animal.nom}`;
+
+      const type = document.createElement("p");
+      type.textContent = `Type : ${animal.type}`;
+
+      const couleur = document.createElement("p");
+      couleur.textContent = `Couleur : ${animal.couleur}`;
 
       const badge = document.createElement("span");
       badge.classList.add("badge");
@@ -151,11 +160,28 @@
         badge.textContent = "Déjà adopté";
         badge.classList.add("badge-adopte");
       }
-      item.appendChild(badge);
-      liste.appendChild(item);
+
+      entete.appendChild(nom);
+      entete.appendChild(badge);
+
+      section.appendChild(entete);
+      section.appendChild(type);
+      section.appendChild(couleur);
+
+      return section;
     }
 
-    wrapper.appendChild(liste);
+
+    const listeAnimaux = document.createElement("div");
+    document.body.appendChild(listeAnimaux);
+
+    listeAnimaux.appendChild(wrapper);
+
+    for (const animal of animaux.slice(1)) {
+      listeAnimaux.appendChild(creerCarteAnimal(animal));
+    }
+
+
 
   </script>
 

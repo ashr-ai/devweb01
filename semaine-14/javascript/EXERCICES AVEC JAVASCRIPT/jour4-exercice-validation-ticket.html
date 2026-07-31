@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>ABM, Ouvrir un ticket (exercice jour 4)</title>
+<style>
+  :root {
+    --color-bg: #f5f6fa;
+    --color-card: #ffffff;
+    --color-primary: #1d3557;
+    --color-accent: #457b9d;
+    --color-danger: #e63946;
+    --color-success: #2a9d8f;
+    --color-text: #2b2d42;
+    --color-border: #dcdde1;
+    --radius: 8px;
+    --spacing: 1rem;
+  }
+
+  /* À toi de continuer le style à partir d'ici si tu veux. */
+
+</style>
+</head>
+<body>
+
+<h1>Ouvrir un ticket, Support ABM</h1>
+
+<!-- Le formulaire est déjà en place. Ta mission porte sur la validation en JS. -->
+<form id="formulaire-ticket" novalidate>
+  <div class="champ">
+    <label for="sujet">Sujet</label>
+    <input type="text" id="sujet" name="sujet">
+    <div class="message-erreur" id="erreur-sujet">Le sujet doit contenir au moins 5 caractères.</div>
+  </div>
+
+  <div class="champ">
+    <label for="departement">Département</label>
+    <select id="departement" name="departement">
+      <option value="">Choisir un département</option>
+      <option value="production">Création et Production</option>
+      <option value="technologie">Produit et Technologie</option>
+      <option value="operations">Opérations et Support Client</option>
+    </select>
+    <div class="message-erreur" id="erreur-departement">Choisis un département.</div>
+  </div>
+
+  <div class="champ">
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="4"></textarea>
+    <div class="message-erreur" id="erreur-description">La description ne peut pas être vide.</div>
+  </div>
+
+  <button type="submit">Créer le ticket</button>
+</form>
+
+<div id="confirmation">Ticket créé avec succès.</div>
+
+<script>
+  const formulaire = document.querySelector("#formulaire-ticket");
+  const champSujet = document.querySelector("#sujet");
+  const champDepartement = document.querySelector("#departement");
+  const champDescription = document.querySelector("#description");
+  const confirmation = document.querySelector("#confirmation");
+
+  // TODO 1 : écoute l'événement "submit" du formulaire et empêche le
+  //          comportement par défaut du navigateur.
+
+  // TODO 2 : valide chacune des trois règles suivantes, une à la fois :
+  //          - le sujet doit contenir au moins 5 caractères
+  //          - un département doit être sélectionné (valeur différente de "")
+  //          - la description ne doit pas être vide une fois les espaces retirés (trim)
+
+  // TODO 3 : pour chaque champ invalide, ajoute la classe "erreur" au champ et
+  //          affiche le message d'erreur correspondant (classe "visible").
+  //          Pour chaque champ valide, retire ces classes.
+  //          Inspire-toi de la démo du jour 4 pour la logique.
+
+  // TODO 4 : si les trois champs sont valides, affiche la confirmation et
+  //          réinitialise le formulaire (formulaire.reset()). Sinon, cache la
+  //          confirmation.
+
+  // N'oublie pas de définir dans le <style> plus haut les classes .champ,
+  // .message-erreur, .message-erreur.visible et .erreur, en t'inspirant de
+  // la démo du jour 4 si besoin.
+</script>
+
+</body>
+</html>

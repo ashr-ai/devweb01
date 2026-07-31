@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>ABM, Gestion de tickets (exercice jour 3)</title>
+<style>
+  :root {
+    --color-bg: #f5f6fa;
+    --color-card: #ffffff;
+    --color-primary: #1d3557;
+    --color-accent: #457b9d;
+    --color-danger: #e63946;
+    --color-success: #2a9d8f;
+    --color-text: #2b2d42;
+    --color-border: #dcdde1;
+    --radius: 8px;
+    --spacing: 1rem;
+  }
+
+  /* À toi de continuer le style à partir d'ici si tu veux. */
+
+</style>
+</head>
+<body>
+
+<h1>Gestion de tickets, Support ABM</h1>
+
+<!-- Formulaire de création, déjà en place. Ta mission porte sur le JS. -->
+<div id="zone-creation">
+  <input type="text" id="champ-sujet" placeholder="Sujet du ticket">
+  <select id="champ-priorite">
+    <option value="basse">Basse</option>
+    <option value="moyenne">Moyenne</option>
+    <option value="haute">Haute</option>
+  </select>
+  <button id="btn-ajouter">Créer le ticket</button>
+</div>
+
+<div id="liste-tickets"></div>
+
+<script>
+  // Contrairement à l'exercice du jour 2, ici "tickets" doit pouvoir grandir et
+  // rétrécir au fil de la session. On garde donc les données dans ce tableau,
+  // et on RE-DESSINE la liste au complet chaque fois qu'elle change.
+  let tickets = [
+    { id: 101, sujet: "Imprimante ne répond plus", priorite: "basse" },
+    { id: 102, sujet: "Impossible de se connecter au VPN", priorite: "haute" }
+  ];
+  let prochainId = 105;
+
+  const listeTickets = document.querySelector("#liste-tickets");
+  const champSujet = document.querySelector("#champ-sujet");
+  const champPriorite = document.querySelector("#champ-priorite");
+  const btnAjouter = document.querySelector("#btn-ajouter");
+
+  function dessinerTickets() {
+    // On vide la liste avant de la reconstruire au complet
+    listeTickets.innerHTML = "";
+
+    tickets.forEach(ticket => {
+      const elementTicket = document.createElement("div");
+      elementTicket.classList.add("ticket");
+      elementTicket.textContent = `#${ticket.id}, ${ticket.sujet} (${ticket.priorite}) `;
+
+      // TODO 1 : crée un bouton "Supprimer" et ajoute-le à elementTicket.
+
+      // TODO 2 : au clic sur ce bouton, retire ce ticket précis du tableau "tickets"
+      //          (indice : tickets.filter(...) pour créer un nouveau tableau sans lui),
+      //          puis rappelle dessinerTickets() pour rafraîchir l'affichage.
+
+      listeTickets.appendChild(elementTicket);
+    });
+  }
+
+  // TODO 3 : au clic sur btnAjouter, lis la valeur de champSujet et champPriorite,
+  //          crée un nouvel objet ticket avec un id unique (utilise prochainId puis
+  //          incrémente-le), ajoute-le au tableau "tickets", vide le champ texte,
+  //          puis rappelle dessinerTickets().
+
+  // Ne pas oublier d'appeler dessinerTickets() une première fois au chargement
+  // pour afficher les tickets de départ.
+  dessinerTickets();
+</script>
+
+</body>
+</html>

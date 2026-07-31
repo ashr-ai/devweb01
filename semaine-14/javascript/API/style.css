@@ -1,0 +1,30 @@
+:root {
+    --color-bg: #f5f6fa;
+    --color-card: #ffffff;
+    --color-primary: #1d3557;
+    --color-accent: #457b9d;
+    --color-text: #2b2d42;
+    --color-border: #dcdde1;
+    --radius: 8px;
+    --spacing: 1rem;
+}
+
+body {
+    background: var(--color-bg);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.carte {
+    width: 350px;
+    height: 350px;
+    border: 2px solid var(--color-border);
+    padding: 10px;
+    background-color: var(--color-accent);
+}
+
+p {
+    font-size: 14px;
+}

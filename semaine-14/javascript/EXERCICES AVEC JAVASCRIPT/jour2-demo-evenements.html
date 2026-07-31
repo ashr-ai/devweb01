@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ABM, Répertoire interactif (démo jour 2)</title>
+  <style>
+    :root {
+      --color-bg: #f5f6fa;
+      --color-card: #ffffff;
+      --color-primary: #1d3557;
+      --color-accent: #457b9d;
+      --color-text: #2b2d42;
+      --color-border: #dcdde1;
+      --radius: 8px;
+      --spacing: 1rem;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      margin: 0;
+      padding: var(--spacing);
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--spacing);
+    }
+
+    h1 {
+      grid-column: 1 / -1;
+    }
+
+    .carte {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 0.75rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+
+    .carte:hover {
+      border-color: var(--color-accent);
+    }
+
+    .carte.selectionnee {
+      border-color: var(--color-primary);
+      border-width: 2px;
+    }
+
+    #panneau-details {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: var(--spacing);
+      align-self: start;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Répertoire interactif ABM</h1>
+
+  <div id="liste-employes"></div>
+
+  <aside id="panneau-details">
+    <p>Clique sur un employé pour voir ses détails ici.</p>
+  </aside>
+
+  <script src="jour2-demo-evenements.js">
+
+  </script>
+</body>
+
+</html>

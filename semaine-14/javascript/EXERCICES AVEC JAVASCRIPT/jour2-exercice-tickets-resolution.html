@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>ABM, Tickets support (exercice jour 2)</title>
+<style>
+  :root {
+    --color-bg: #f5f6fa;
+    --color-card: #ffffff;
+    --color-primary: #1d3557;
+    --color-accent: #457b9d;
+    --color-danger: #e63946;
+    --color-success: #2a9d8f;
+    --color-text: #2b2d42;
+    --color-border: #dcdde1;
+    --radius: 8px;
+    --spacing: 1rem;
+  }
+
+  /* À toi de continuer le style à partir d'ici si tu veux. */
+
+</style>
+</head>
+<body>
+
+<h1>File de tickets, Support ABM</h1>
+<p>Nombre de tickets résolus : <span id="compteur-resolus">0</span></p>
+
+<div id="liste-tickets"></div>
+
+<script>
+  // Données de départ, ne pas modifier cette liste
+  const tickets = [
+    { id: 101, sujet: "Imprimante ne répond plus", departement: "Opérations", priorite: "basse" },
+    { id: 102, sujet: "Impossible de se connecter au VPN", departement: "Technologie", priorite: "haute" },
+    { id: 103, sujet: "Compte verrouillé après plusieurs tentatives", departement: "Sécurité", priorite: "haute" },
+    { id: 104, sujet: "Demande d'accès au dossier partagé Production", departement: "Production", priorite: "moyenne" }
+  ];
+
+  const listeTickets = document.querySelector("#liste-tickets");
+  const compteurResolus = document.querySelector("#compteur-resolus");
+  let nombreResolus = 0;
+
+  // TODO 1 : pour chaque ticket, crée un élément qui affiche le sujet, le département
+  //          et la priorité.
+
+  // TODO 2 : ajoute à chaque ticket un <button> "Marquer comme résolu".
+
+  // TODO 3 : au clic sur ce bouton, ajoute la classe "resolu" à l'élément du ticket
+  //          (utilise classList.toggle pour permettre d'annuler aussi).
+  //          Stylise la classe "resolu" dans le <style> plus haut (par exemple texte
+  //          barré et grisé) pour que ce soit visuellement clair.
+
+  // TODO 4 : chaque fois qu'un ticket passe résolu ou redevient actif, mets à jour
+  //          la valeur de nombreResolus et affiche-la dans #compteur-resolus.
+
+  // Indice : addEventListener("click", () => { ... }) sur le bouton créé pour CE ticket.
+
+</script>
+
+</body>
+</html>

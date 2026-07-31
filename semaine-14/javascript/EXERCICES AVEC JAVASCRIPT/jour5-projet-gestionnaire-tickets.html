@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>ABM, Gestionnaire de tickets (projet jour 5)</title>
+<style>
+  :root {
+    --color-bg: #f5f6fa;
+    --color-card: #ffffff;
+    --color-primary: #1d3557;
+    --color-accent: #457b9d;
+    --color-danger: #e63946;
+    --color-success: #2a9d8f;
+    --color-text: #2b2d42;
+    --color-border: #dcdde1;
+    --radius: 8px;
+    --spacing: 1rem;
+  }
+
+  /* À toi de continuer le style à partir d'ici, c'est ton projet. */
+
+</style>
+</head>
+<body>
+
+<h1>Gestionnaire de tickets, Support ABM</h1>
+
+<section id="zone-creation">
+  <input type="text" id="champ-sujet" placeholder="Sujet du ticket">
+  <select id="champ-departement">
+    <option value="production">Création et Production</option>
+    <option value="technologie">Produit et Technologie</option>
+    <option value="operations">Opérations et Support Client</option>
+  </select>
+  <select id="champ-priorite">
+    <option value="basse">Basse</option>
+    <option value="moyenne">Moyenne</option>
+    <option value="haute">Haute</option>
+  </select>
+  <button id="btn-ajouter">Créer le ticket</button>
+</section>
+
+<section id="zone-filtres">
+  <label>
+    Filtrer par département :
+    <select id="filtre-departement">
+      <option value="tous">Tous</option>
+      <option value="production">Création et Production</option>
+      <option value="technologie">Produit et Technologie</option>
+      <option value="operations">Opérations et Support Client</option>
+    </select>
+  </label>
+  <label>
+    Filtrer par statut :
+    <select id="filtre-statut">
+      <option value="tous">Tous</option>
+      <option value="actif">Actifs seulement</option>
+      <option value="resolu">Résolus seulement</option>
+    </select>
+  </label>
+</section>
+
+<p>Tickets actifs : <span id="compteur-actifs">0</span>, résolus : <span id="compteur-resolus">0</span></p>
+
+<div id="liste-tickets"></div>
+
+<script>
+  /*
+    PROJET INTÉGRATEUR, JOUR 5
+
+    Objectif : combiner tout ce qu'on a vu cette semaine dans un seul outil.
+    C'est une version simplifiée de ce que tu retrouveras dans le projet P2.
+
+    Fonctionnalités à réaliser, dans l'ordre suggéré :
+
+    1. Affichage : dessiner la liste des tickets à partir du tableau "tickets"
+       (jour 1 et 2 : querySelector, création d'éléments, classList selon la priorité).
+
+    2. Création : au clic sur "btn-ajouter", lire les champs du formulaire de création,
+       créer un nouveau ticket, l'ajouter au tableau, puis redessiner la liste
+       (jour 3 : createElement, tableau de données qui évolue).
+
+    3. Résolution : un bouton par ticket qui bascule son statut entre actif et résolu
+       (jour 2 : classList.toggle), et qui met à jour les deux compteurs en haut de page.
+
+    4. Suppression : un bouton par ticket pour le retirer définitivement du tableau
+       (jour 3 : filter, redessiner la liste).
+
+    5. Filtres : quand on change "filtre-departement" ou "filtre-statut", la liste
+       affichée doit se limiter aux tickets qui correspondent (indice : garder les
+       données complètes dans "tickets", et calculer un tableau filtré juste avant
+       de dessiner, avec .filter()).
+
+    6. Validation (optionnel, si tu as le temps) : refuser la création d'un ticket
+       si le sujet contient moins de 5 caractères, en réutilisant ce qu'on a vu
+       jour 4.
+
+    Tu n'es pas obligé de suivre cet ordre à la lettre, mais avance une fonctionnalité
+    à la fois et teste-la avant de passer à la suivante.
+  */
+
+  let tickets = [
+    { id: 101, sujet: "Imprimante ne répond plus", departement: "operations", priorite: "basse", statut: "actif" },
+    { id: 102, sujet: "Impossible de se connecter au VPN", departement: "technologie", priorite: "haute", statut: "actif" },
+    { id: 103, sujet: "Compte verrouillé après plusieurs tentatives", departement: "technologie", priorite: "haute", statut: "actif" },
+    { id: 104, sujet: "Demande d'accès au dossier partagé Production", departement: "production", priorite: "moyenne", statut: "resolu" }
+  ];
+  let prochainId = 105;
+
+  const listeTickets = document.querySelector("#liste-tickets");
+  const champSujet = document.querySelector("#champ-sujet");
+  const champDepartement = document.querySelector("#champ-departement");
+  const champPriorite = document.querySelector("#champ-priorite");
+  const btnAjouter = document.querySelector("#btn-ajouter");
+  const filtreDepartement = document.querySelector("#filtre-departement");
+  const filtreStatut = document.querySelector("#filtre-statut");
+  const compteurActifs = document.querySelector("#compteur-actifs");
+  const compteurResolus = document.querySelector("#compteur-resolus");
+
+  function dessinerTickets() {
+    // TODO : à partir du tableau "tickets", applique les filtres choisis
+    // (filtreDepartement.value et filtreStatut.value), puis dessine le résultat
+    // dans "listeTickets". Mets aussi à jour compteurActifs et compteurResolus
+    // en te basant sur le tableau COMPLET (pas seulement la partie filtrée).
+  }
+
+  btnAjouter.addEventListener("click", () => {
+    // TODO : lire les champs, créer le nouveau ticket, l'ajouter à "tickets",
+    // vider le champ sujet, puis rappeler dessinerTickets().
+  });
+
+  filtreDepartement.addEventListener("change", dessinerTickets);
+  filtreStatut.addEventListener("change", dessinerTickets);
+
+  dessinerTickets();
+</script>
+
+</body>
+</html>
