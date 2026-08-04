@@ -1,5 +1,3 @@
-const { createElement } = require("react");
-
 // Données de départ, ne pas modifier cette liste
 const tickets = [
     { id: 101, sujet: "Imprimante ne répond plus", departement: "Opérations", priorite: "basse" },
