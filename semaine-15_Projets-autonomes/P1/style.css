@@ -15,7 +15,9 @@
     --success: #34D399;
     --error: #F87171;
 
-    --h2-size: 42px
+    --h2-size: 42px;
+    --titlefont: 'Osheaga Title Font', sans-serif;
+    --textfont: 'Osheaga Text Font', sans-serif;
 }
 
 html {
@@ -54,7 +56,7 @@ section {
 
 p,
 span {
-    font-family: 'Osheaga Text Font', sans-serif;
+    font-family: var(--textfont);
     font-size: 16px;
 }
 
@@ -62,7 +64,7 @@ h1,
 h2,
 a {
     color: var(--titres-texte-important);
-    font-family: 'Osheaga Title Font', sans-serif;
+    font-family: var(--titlefont);
     text-decoration: none;
 }
 
@@ -162,6 +164,8 @@ header {
         transform 0.35s ease,
         box-shadow 0.35s ease;
     transform-style: preserve-3d;
+
+    font-family: var(--textfont);
 }
 
 .carte-artiste:hover {
@@ -202,6 +206,14 @@ header {
 #FAQ h2 {
     font-size: var(--h2-size);
     line-height: 63px;
+}
+
+#FAQ h3 {
+    font-family: var(--textfont);
+}
+
+#FAQ a {
+    font-family: var(--textfont);
 }
 
 .questionFAQ:not(:last-child) {
@@ -262,6 +274,34 @@ header {
     font-size: var(--h2-size);
 }
 
+#btnMeteo {
+    background: none;
+    border: none;
+    padding: 0;
+
+    color: var(--titres-texte-important);
+    font-family: 'Osheaga Title Font', sans-serif;
+    font-size: var(--h2-size);
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.titre-meteo p {
+    color: var(--text-discret);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#message-meteo {
+    margin-top: -30px;
+    font-size: 16px;
+}
+
 #carte-meteo {
     display: flex;
     flex-wrap: wrap;
@@ -288,6 +328,7 @@ header {
     animation: apparitionMeteo 0.8s ease forwards;
     opacity: 0;
 
+    font-family: var(--textfont);
 }
 
 .carte-jour:hover {
@@ -316,38 +357,6 @@ header {
     margin: 5px 0;
 }
 
-#btnMeteo {
-    background: none;
-    border: none;
-    padding: 0;
-
-    color: var(--titres-texte-important);
-    font-family: 'Osheaga Title Font', sans-serif;
-    font-size: var(--h2-size);
-
-    cursor: pointer;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease,
-        text-shadow 0.3s ease;
-}
-
-/* #btnMeteo:hover {
-    background-color: #C08E5E;
-    transform: scale(1.03);
-}
-
-#btnMeteo:disabled {
-    opacity: 0.7;
-    cursor: wait;
-} */
-
-.titre-meteo p {
-    color: var(--text-discret);
-    font-size: 14px;
-    margin-top: 5px;
-}
 
 /* Footer */
 footer {

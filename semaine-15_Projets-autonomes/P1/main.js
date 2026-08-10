@@ -26,6 +26,7 @@ questionsFAQ.forEach(questionFAQ => {
 const btnMeteo = document.querySelector("#btnMeteo");
 const carteMeteo = document.querySelector("#carte-meteo")
 const messageMeteo = document.querySelector("#message-meteo")
+const texteParDefaut = messageMeteo.textContent;
 const urlMeteo = "https://api.open-meteo.com/v1/forecast?latitude=45.5088&longitude=-73.5878&daily=temperature_2m_max,wind_speed_10m_max,weather_code&forecast_days=7&timezone=America%2FNew_York";
 
 let weatherCodes
@@ -82,6 +83,7 @@ async function chargerMeteo() {
 
         btnMeteo.disabled = false;
         btnMeteo.textContent = "Conditions actuelles";
+        messageMeteo.textContent = texteParDefaut;
     }
 }
 
