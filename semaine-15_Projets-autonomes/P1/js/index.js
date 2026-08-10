@@ -22,6 +22,7 @@ questionsFAQ.forEach(questionFAQ => {
 
 });
 
+
 // Météo API
 const btnMeteo = document.querySelector("#btnMeteo");
 const carteMeteo = document.querySelector("#carte-meteo")
@@ -76,20 +77,19 @@ async function chargerMeteo() {
         }
         const data = await response.json();
         afficherMeteo(data);
+        messageMeteo.textContent = texteParDefaut;
     } catch (error) {
         messageMeteo.textContent = "Impossible de récupérer la météo.";
         console.error('Erreur :', error);
     } finally {
-
         btnMeteo.disabled = false;
         btnMeteo.textContent = "Conditions actuelles";
-        messageMeteo.textContent = texteParDefaut;
     }
 }
 
 async function chargerCodesMeteo() {
     if (!weatherCodes) {
-        const response = await fetch("weatherCodes.json");
+        const response = await fetch("js/json/weatherCodes.json");
         weatherCodes = await response.json();
     }
 }

@@ -22,17 +22,32 @@
             </nav>
         </header>
         <main class="main-form">
-            <form>
+            <form id="form-contact">
                 <div class="form-labels-box">
-                    <label for="nom">Nom : </label>
-                    <input type="text" name="nom" id="nom" placeholder="Steve Jobs">
-                    <label for="courriel">Courriel : </label>
-                    <input type="email" name="courriel" id="courriel" placeholder="exemple@eclipsefestival.com">
-                    <label for="titre">Titre : </label>
-                    <input type="text" name="titre" id="titre" placeholder="Programmeur-développeur">
-                    <label for="message" id="info">Message : </label>
-                    <textarea name="message" id="message" placeholder="Écrire votre message ici..." class="textarea"
-                        rows="5"></textarea>
+                    <div class="champ-form">
+                        <label for="nom">Nom : </label>
+                        <input type="text" name="nom" id="nom" placeholder="Steve Jobs">
+                        <p id="erreur-nom"></p>
+                    </div>
+
+                    <div class="champ-form">
+                        <label for="courriel">Courriel : </label>
+                        <input type="email" name="courriel" id="courriel" placeholder="exemple@eclipsefestival.com">
+                        <p id="erreur-courriel"></p>
+                    </div>
+
+
+                    <div class="champ-form">
+                        <label for="titre">Titre : </label>
+                        <input type="text" name="titre" id="titre" placeholder="Programmeur-développeur">
+                    </div>
+
+                    <div class="champ-form">
+                        <label for="message" id="info">Message : </label>
+                        <textarea name="message" id="message" placeholder="Écrire votre message ici..." class="textarea"
+                            rows="5"></textarea>
+                        <p id="erreur-message"></p>
+                    </div>
                 </div>
 
                 <div>
@@ -77,6 +92,7 @@
                 <p>© Copyright 2026. Tous droits réservés.</p>
             </div>
         </footer>
+        <script src="js/form.js"></script>
 </body>
 
 </html>
