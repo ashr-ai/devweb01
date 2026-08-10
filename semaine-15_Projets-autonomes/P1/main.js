@@ -25,13 +25,14 @@ questionsFAQ.forEach(questionFAQ => {
 // Météo API
 const btnMeteo = document.querySelector("#btnMeteo");
 const carteMeteo = document.querySelector("#carte-meteo")
+const messageMeteo = document.querySelector("#message-meteo")
 const urlMeteo = "https://api.open-meteo.com/v1/forecast?latitude=45.5088&longitude=-73.5878&daily=temperature_2m_max,wind_speed_10m_max,weather_code&forecast_days=7&timezone=America%2FNew_York";
 
 let weatherCodes
 
 function afficherMeteo(data) {
     const jours = data.daily.time
-    const temp = data.daily.temperature_2m_max;
+    const temperature = data.daily.temperature_2m_max;
     const vent = data.daily.wind_speed_10m_max;
     const codeMeteo = data.daily.weather_code;
 
@@ -39,13 +40,21 @@ function afficherMeteo(data) {
 
     jours.forEach((jour, index) => {
         const nomJour = formaterJour(jour, index);
-        const description = weatherCodes[codeMeteo[index]] || "Conditions inconnues";
+        const temp = Math.round(temperature[index]);
+        const condition = weatherCodes[codeMeteo[index]] || {
+            description: "Conditions inconnues",
+            icon: "not-available"
+        };
         carteMeteo.innerHTML += `
-            <div class="carte-jour">
+            <div class="carte-jour ${condition.icon}" style="animation-delay: ${index * 0.12}s">
                 <h3>${nomJour}</h3>
-                <p>🌡️ Température : ${temp[index]} °C</p>
-                <p>💨 Vent : ${vent[index]} km/h</p>
-                <p>🏙️ Conditions : ${description}</p>
+                <img class="icone-meteo"
+    src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/${condition.icon}.svg"
+    alt="${condition.description}"
+>
+                <p class="temp">${temp}°C</p>
+                <p>Conditions : ${condition.description}</p>
+                <p>Vent : ${vent[index]} km/h</p>
             </div>
         `;
     });
@@ -57,9 +66,8 @@ async function initMeteo() {
 }
 
 async function chargerMeteo() {
-    carteMeteo.innerHTML = `
-        <p>Chargement de la météo...</p>
-        `;
+    btnMeteo.disabled = true;
+    messageMeteo.textContent = "Chargement de la météo...";
     try {
         const response = await fetch(urlMeteo);
         if (!response.ok) {
@@ -68,10 +76,12 @@ async function chargerMeteo() {
         const data = await response.json();
         afficherMeteo(data);
     } catch (error) {
-        carteMeteo.innerHTML = `
-            <p>Impossible de récupérer la météo pour le moment.</p>
-        `;
+        messageMeteo.textContent = "Impossible de récupérer la météo.";
         console.error('Erreur :', error);
+    } finally {
+
+        btnMeteo.disabled = false;
+        btnMeteo.textContent = "Conditions actuelles";
     }
 }
 
