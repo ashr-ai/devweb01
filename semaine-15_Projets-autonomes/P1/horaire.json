@@ -1,0 +1,255 @@
+{
+  "evenements": [
+    {
+      "date": "2026-08-25",
+      "artiste": "Christa Maria",
+      "heure": "15:00",
+      "scene": "Moon Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-25",
+      "artiste": "Jules",
+      "heure": "16:30",
+      "scene": "Moon Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-25",
+      "artiste": "Papi Jay",
+      "heure": "18:00",
+      "scene": "Moon Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-25",
+      "artiste": "KALLITECHNIS",
+      "heure": "19:00",
+      "scene": "Sunset Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-25",
+      "artiste": "Dominique Fils-Aimé",
+      "heure": "21:30",
+      "scene": "Sunset Stage",
+      "visible": true
+    },
+
+    {
+      "date": "2026-08-26",
+      "artiste": "Sandra Étienne",
+      "heure": "15:00",
+      "scene": "Moon Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-26",
+      "artiste": "Artiste surprise",
+      "heure": "16:30",
+      "scene": "Moon Stage",
+      "visible": false
+    },
+    {
+      "date": "2026-08-26",
+      "artiste": "Artiste surprise",
+      "heure": "18:00",
+      "scene": "Moon Stage",
+      "visible": false
+    },
+    {
+      "date": "2026-08-26",
+      "artiste": "Raccoon",
+      "heure": "19:00",
+      "scene": "Sunset Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-26",
+      "artiste": "Shah Frank & Naïma Frank",
+      "heure": "21:30",
+      "scene": "Sunset Stage",
+      "visible": true
+    },
+
+    {
+      "date": "2026-08-27",
+      "artiste": "Daniel Ojo",
+      "heure": "15:00",
+      "scene": "Moon Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-27",
+      "artiste": "OBED",
+      "heure": "16:30",
+      "scene": "Moon Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-27",
+      "artiste": "Reggie Dartey",
+      "heure": "18:00",
+      "scene": "Moon Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-27",
+      "artiste": "Kofi Dartey",
+      "heure": "19:00",
+      "scene": "Sunset Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-27",
+      "artiste": "Ryan Ofei",
+      "heure": "21:30",
+      "scene": "Sunset Stage",
+      "visible": true
+    },
+
+    {
+      "date": "2026-08-28",
+      "artiste": "Artiste surprise",
+      "heure": "15:00",
+      "scene": "Moon Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-28",
+      "artiste": "Artiste surprise",
+      "heure": "16:30",
+      "scene": "Moon Stage",
+      "visible": false
+    },
+    {
+      "date": "2026-08-28",
+      "artiste": "Blynk",
+      "heure": "18:00",
+      "scene": "Moon Stage",
+      "visible": false
+    },
+    {
+      "date": "2026-08-28",
+      "artiste": "Zach Zoya",
+      "heure": "19:00",
+      "scene": "Sunset Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-28",
+      "artiste": "Masego",
+      "heure": "21:30",
+      "scene": "Sunset Stage",
+      "visible": true
+    },
+
+    {
+      "date": "2026-08-29",
+      "artiste": "Elikya",
+      "heure": "15:00",
+      "scene": "Moon Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-29",
+      "artiste": "Ayomilly",
+      "heure": "16:30",
+      "scene": "Moon Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-29",
+      "artiste": "Daniel Saad",
+      "heure": "18:00",
+      "scene": "Moon Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-29",
+      "artiste": "David Okit",
+      "heure": "19:00",
+      "scene": "Sunset Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-29",
+      "artiste": "TOBi",
+      "heure": "21:30",
+      "scene": "Sunset Stage",
+      "visible": true
+    },
+
+    {
+      "date": "2026-08-30",
+      "artiste": "Artiste surprise",
+      "heure": "15:00",
+      "scene": "Moon Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-30",
+      "artiste": "Artiste surprise",
+      "heure": "16:30",
+      "scene": "Moon Stage",
+      "visible": false
+    },
+    {
+      "date": "2026-08-30",
+      "artiste": "Adam El Mouna",
+      "heure": "18:00",
+      "scene": "Moon Stage",
+      "visible": false
+    },
+    {
+      "date": "2026-08-30",
+      "artiste": "Irdens Exantus",
+      "heure": "19:00",
+      "scene": "Sunset Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-30",
+      "artiste": "Corneille",
+      "heure": "21:30",
+      "scene": "Sunset Stage",
+      "visible": true
+    },
+
+    {
+      "date": "2026-08-31",
+      "artiste": "Artiste surprise",
+      "heure": "15:00",
+      "scene": "Moon Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-31",
+      "artiste": "Anaïs Cardot",
+      "heure": "16:30",
+      "scene": "Moon Stage",
+      "visible": false
+    },
+    {
+      "date": "2026-08-31",
+      "artiste": "Artiste surprise",
+      "heure": "18:00",
+      "scene": "Moon Stage",
+      "visible": false
+    },
+    {
+      "date": "2026-08-31",
+      "artiste": "Gäelle",
+      "heure": "19:00",
+      "scene": "Sunset Stage",
+      "visible": true
+    },
+    {
+      "date": "2026-08-31",
+      "artiste": "Daniel Caesar",
+      "heure": "21:30",
+      "scene": "Sunset Stage",
+      "visible": true
+    }
+  ]
+}

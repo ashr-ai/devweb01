@@ -1,14 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>ECLIPSE | Contact</title>
 </head>
 
 <body>
+    <div class="conteneur-site">
+        <header id="accueil">
+            <a href="index.html" class="header-logo"><img src="images/logo.svg" alt="Logo du festival Eclipse"></a>
+            <nav class="nav">
+                <ul class="list">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#a-propos">ADN</a></li>
+                    <li><a href="horaire.html">Programmation</a></li>
+                    <li><a href="form.html">Nous contacter</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main-form">
+            <form>
+                <div class="form-labels-box">
+                    <label for="nom">Nom : </label>
+                    <input type="text" name="nom" id="nom" placeholder="Steve Jobs">
+                    <label for="courriel">Courriel : </label>
+                    <input type="email" name="courriel" id="courriel" placeholder="exemple@eclipsefestival.com">
+                    <label for="titre">Titre : </label>
+                    <input type="text" name="titre" id="titre" placeholder="Programmeur-développeur">
+                    <label for="message" id="info">Message : </label>
+                    <textarea name="message" id="message" placeholder="Écrire votre message ici..." class="textarea"
+                        rows="5"></textarea>
+                </div>
 
+                <div>
+                    <!-- From Uiverse.io by gharsh11032000 -->
+                    <button type="submit" class="animated-button">
+                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                            </path>
+                        </svg>
+                        <span class="text">Envoyer</span>
+                        <span class="circle"></span>
+                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                            </path>
+                        </svg>
+                    </button>
+
+                </div>
+            </form>
+        </main>
+        <footer>
+            <div class="footer-haut">
+                <div class="footer-logo"><img src="images/logo.svg" alt="Logo du festival Eclipse"></div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#a-propos">ADN</a></li>
+                        <li><a href="horaire.html">Programmation</a></li>
+                        <li><a href="form.html">Nous contacter</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-contact">
+                    <p>1275 Rue Saint-Antoine Ouest</p>
+                    <p>Montréal, QC H3C 5L2</p>
+                    <p>1 855-310-2525</p>
+                    <p>info@eclipsefestival.com</p>
+                </div>
+            </div>
+            <div class="footer-bas">
+                <p>© Copyright 2026. Tous droits réservés.</p>
+            </div>
+        </footer>
 </body>
 
 </html>
