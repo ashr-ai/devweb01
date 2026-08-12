@@ -1,5 +1,5 @@
 {
-  "evenements": [
+  "shows": [
     {
       "date": "2026-08-25",
       "artiste": "Christa Maria",
@@ -45,14 +45,14 @@
     },
     {
       "date": "2026-08-26",
-      "artiste": "Artiste surprise",
+      "artiste": "---",
       "heure": "16:30",
       "scene": "Moon Stage",
       "visible": false
     },
     {
       "date": "2026-08-26",
-      "artiste": "Artiste surprise",
+      "artiste": "---",
       "heure": "18:00",
       "scene": "Moon Stage",
       "visible": false
@@ -110,14 +110,14 @@
 
     {
       "date": "2026-08-28",
-      "artiste": "Artiste surprise",
+      "artiste": "---",
       "heure": "15:00",
       "scene": "Moon Stage",
       "visible": true
     },
     {
       "date": "2026-08-28",
-      "artiste": "Artiste surprise",
+      "artiste": "---",
       "heure": "16:30",
       "scene": "Moon Stage",
       "visible": false
@@ -182,14 +182,14 @@
 
     {
       "date": "2026-08-30",
-      "artiste": "Artiste surprise",
+      "artiste": "---",
       "heure": "15:00",
       "scene": "Moon Stage",
       "visible": true
     },
     {
       "date": "2026-08-30",
-      "artiste": "Artiste surprise",
+      "artiste": "---",
       "heure": "16:30",
       "scene": "Moon Stage",
       "visible": false
@@ -218,7 +218,7 @@
 
     {
       "date": "2026-08-31",
-      "artiste": "Artiste surprise",
+      "artiste": "---",
       "heure": "15:00",
       "scene": "Moon Stage",
       "visible": true
@@ -232,7 +232,7 @@
     },
     {
       "date": "2026-08-31",
-      "artiste": "Artiste surprise",
+      "artiste": "---",
       "heure": "18:00",
       "scene": "Moon Stage",
       "visible": false

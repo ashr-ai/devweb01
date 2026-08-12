@@ -27,22 +27,22 @@ form.addEventListener("submit", function (event) {
     if (nom.value === "") {
         erreurNom.textContent = "Votre nom est incomplet";
         erreurNom.classList.add("message-visible");
-        formulaireValide = false;
+        formValide = false;
     }
 
     if (courriel.value === "") {
         erreurCourriel.textContent = "Votre courriel est incomplet";
         erreurCourriel.classList.add("message-visible");
-        formulaireValide = false;
+        formValide = false;
     }
 
-    if (message.value === "") {
-        erreurMessage.textContent = "Votre message est incomplet";
+    if (message.value.length < 20) {
+        erreurMessage.textContent = "Votre message doit contenir au moins 20 caractères";
         erreurMessage.classList.add("message-visible");
-        formulaireValide = false;
+        formValide = false;
     }
 
-    if (formulaireValide) {
+    if (formValide) {
         console.log("Formulaire valide");
     }
 });

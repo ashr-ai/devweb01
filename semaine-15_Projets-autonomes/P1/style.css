@@ -25,22 +25,58 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    margin: 0;
+    font-family: var(--textfont);
+    color: var(--paragraphes);
+    padding: 60px 80px;
+    /* background: linear-gradient(180deg,
+    var(--bg-principal),
+    var(--bg-accent),
+    var(--bg-principal)); */
+    background:
+        radial-gradient(circle at 20% 30%,
+            rgba(168, 135, 45, 0.15),
+            transparent 45%),
+        linear-gradient(180deg,
+            var(--bg-principal),
+            var(--bg-accent),
+            var(--bg-principal));
+
+    background-size: 200% 200%;
+    animation: fondAnime 15s ease-in-out infinite alternate;
+}
+
+.conteneur-site {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+}
+
 section {
     scroll-margin-top: 90px;
 }
 
-@keyframes apparitionMeteo {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+main {
+    flex: 1;
 }
 
+h1,
+h2,
+a {
+    color: var(--titres-texte-important);
+    font-family: var(--titlefont);
+    text-decoration: none;
+}
+
+p,
+span {
+    font-family: var(--textfont);
+    font-size: 16px;
+}
+
+
+/* Fonts */
 @font-face {
     font-family: 'Osheaga Title Font';
     src: url(fonts/roc-grotesk/Fontspring-DEMO-rocgrotesk-black.otf);
@@ -55,40 +91,30 @@ section {
     font-style: normal;
 }
 
-p,
-span {
-    font-family: var(--textfont);
-    font-size: 16px;
+
+/* Animations */
+@keyframes apparitionMeteo {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-h1,
-h2,
-a {
-    color: var(--titres-texte-important);
-    font-family: var(--titlefont);
-    text-decoration: none;
+@keyframes fondAnime {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: 100% 100%;
+    }
 }
 
-body {
-    margin: 0;
-    font-family: var(--textfont);
-    color: var(--paragraphes);
-    padding: 60px 80px;
-    background: linear-gradient(180deg,
-            var(--bg-principal),
-            var(--bg-accent),
-            var(--bg-principal));
-}
-
-.conteneur-site {
-    min-height: calc(100vh - 120px);
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
-}
 
 /* Header - index.html */
 header {
@@ -115,7 +141,6 @@ header {
 
 
 /* Section ADN - index.html */
-
 #a-propos h1,
 .main-horaire h1 {
     letter-spacing: 2px;
@@ -169,15 +194,12 @@ header {
 .carte-artiste {
     background-color: var(--cartes-sections);
     border-radius: 10px;
-    /* border: 2px solid var(--border); */
+    font-family: var(--textfont);
     overflow: hidden;
-
     transition:
         transform 0.35s ease,
         box-shadow 0.35s ease;
     transform-style: preserve-3d;
-
-    font-family: var(--textfont);
 }
 
 .carte-artiste:hover {
@@ -238,7 +260,6 @@ header {
 }
 
 .questionFAQ h3 {
-    /* color: var(--titres-texte-important); */
     margin: 0;
     font-size: 20px;
     padding: 25px 0;
@@ -380,7 +401,8 @@ footer {
     align-items: center;
 }
 
-.footer-haut>* {
+.footer-logo,
+.footer-contact {
     flex: 1;
 }
 
@@ -420,12 +442,12 @@ form {
     background-color: #2b224b3b;
     width: 100%;
     max-width: 600px;
-    height: 600px;
+    height: 550px;
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
     border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .form-labels-box {
@@ -451,12 +473,10 @@ form input[type="email"] {
 
 .textarea {
     background: #efede8;
-    color: #333;
     border: none;
-    margin-top: 10px;
     border-radius: 10px;
     font-family: var(--textfont);
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.4;
     outline: none;
     transition: all 0.2s ease;
@@ -479,19 +499,14 @@ form input[type="email"] {
     opacity: 1;
 }
 
-#erreur-nom,
-#erreur-courriel,
-#erreur-message {
-    margin: 5px 0 10px;
-    color: var(--error);
-    font-size: 14px;
-}
-
 .champ-form {
-    position: relative;
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+.champ-titre {
+    margin-bottom: 20px;
 }
 
 .message-erreur {
