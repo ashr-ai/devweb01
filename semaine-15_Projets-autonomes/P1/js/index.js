@@ -32,39 +32,18 @@ const urlMeteo = "https://api.open-meteo.com/v1/forecast?latitude=45.5088&longit
 
 let weatherCodes
 
-function afficherMeteo(data) {
-    const jours = data.daily.time
-    const temperature = data.daily.temperature_2m_max;
-    const vent = data.daily.wind_speed_10m_max;
-    const codeMeteo = data.daily.weather_code;
-
-    carteMeteo.innerHTML = "";
-
-    jours.forEach((jour, index) => {
-        const nomJour = formaterJour(jour, index);
-        const temp = Math.round(temperature[index]);
-        const condition = weatherCodes[codeMeteo[index]] || {
-            description: "Conditions inconnues",
-            icon: "not-available"
-        };
-        carteMeteo.innerHTML += `
-            <div class="carte-jour ${condition.icon}" style="animation-delay: ${index * 0.12}s">
-                <h3>${nomJour}</h3>
-                <img class="icone-meteo"
-    src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/${condition.icon}.svg"
-    alt="${condition.description}"
->
-                <p class="temp">${temp}°C</p>
-                <p>Conditions : ${condition.description}</p>
-                <p>Vent : ${vent[index]} km/h</p>
-            </div>
-        `;
-    });
-}
-
+// initMeteo() lance les deux fonctions nécessaires en ordre pour démarrer la météo
 async function initMeteo() {
     await chargerCodesMeteo();
     await chargerMeteo();
+}
+
+// On vérifie si les codes météo existent déjà, sinon on les récupère dans le JSON
+async function chargerCodesMeteo() {
+    if (!weatherCodes) {
+        const response = await fetch("js/json/weatherCodes.json");
+        weatherCodes = await response.json();
+    }
 }
 
 async function chargerMeteo() {
@@ -87,13 +66,38 @@ async function chargerMeteo() {
     }
 }
 
-async function chargerCodesMeteo() {
-    if (!weatherCodes) {
-        const response = await fetch("js/json/weatherCodes.json");
-        weatherCodes = await response.json();
-    }
+function afficherMeteo(data) {
+    const jours = data.daily.time
+    const temperature = data.daily.temperature_2m_max;
+    const vent = data.daily.wind_speed_10m_max;
+    const codeMeteo = data.daily.weather_code;
+
+    carteMeteo.innerHTML = "";
+
+    // Cette boucle parcourt chaque jour reçu par l'API et crée une carte météo
+    jours.forEach((jour, index) => {
+        const nomJour = formaterJour(jour, index);
+        const temp = Math.round(temperature[index]);
+        const condition = weatherCodes[codeMeteo[index]] || {
+            description: "Conditions inconnues",
+            icon: "not-available"
+        };
+        carteMeteo.innerHTML += `
+            <div class="carte-jour ${condition.icon}" style="animation-delay: ${index * 0.12}s">
+                <h3>${nomJour}</h3>
+                <img class="icone-meteo"
+    src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/${condition.icon}.svg"
+    alt="${condition.description}"
+>
+                <p class="temp">${temp}°C</p>
+                <p>Conditions : ${condition.description}</p>
+                <p>Vent : ${vent[index]} km/h</p>
+            </div>
+        `;
+    });
 }
 
+// Transforme la date reçue par l'API en une date plus facile à lire
 function formaterJour(jour, index) {
     let nomJour;
 
@@ -115,8 +119,8 @@ function formaterJour(jour, index) {
     return nomJour.charAt(0).toUpperCase() + nomJour.slice(1);
 }
 
+// Lancement de la météo dès le chargement de la page
 initMeteo();
 
+// Actualise la météo
 btnMeteo.addEventListener('click', chargerMeteo);
-
-

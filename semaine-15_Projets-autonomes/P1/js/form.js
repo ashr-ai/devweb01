@@ -11,17 +11,20 @@ const erreurMessage = document.querySelector("#erreur-message");
 
 form.addEventListener("submit", function (event) {
 
+    // Empêche le formulaire de se soumettre pour pouvoir valider avec JS
     event.preventDefault();
 
+    // On cache les anciens messages d'erreur
     erreurNom.classList.remove("message-visible");
     erreurCourriel.classList.remove("message-visible");
     erreurMessage.classList.remove("message-visible");
 
-
+    // Ensuite on efface leur texte
     erreurNom.textContent = ""
     erreurCourriel.textContent = ""
     erreurMessage.textContent = ""
 
+    // On considère le formulaire valide au départ
     let formValide = true
 
     if (nom.value === "") {
