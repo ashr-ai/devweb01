@@ -1,3 +1,78 @@
+// Intro
+const logoAnime = document.querySelector(".logo-intro-anime");
+const logoStill = document.querySelector(".logo-intro-still");
+const logoHeader = document.querySelector(".header-logo");
+const conteneurSite = document.querySelector(".conteneur-site");
+
+setTimeout(function () {
+
+    // Récupère la position et la taille du logo du header
+    const headerPosition = logoHeader.getBoundingClientRect();
+
+    // Affiche le frame
+    logoStill.style.opacity = "1";
+
+    setTimeout(function () {
+
+        // Cache le GIF
+        logoAnime.style.opacity = "0";
+
+        // Redimensionne le frame
+        logoStill.style.width =
+            headerPosition.width + "px";
+
+        // Récupère sa nouvelle position
+        const stillPosition =
+            logoStill.getBoundingClientRect();
+
+        // Centre du logo du header
+        const headerCentreX =
+            headerPosition.left + headerPosition.width / 2;
+
+        const headerCentreY =
+            headerPosition.top + headerPosition.height / 2;
+
+        // Centre du frame
+        const stillCentreX =
+            stillPosition.left + stillPosition.width / 2;
+
+        const stillCentreY =
+            stillPosition.top + stillPosition.height / 2;
+
+        // Calcule le déplacement
+        const deplacementX =
+            headerCentreX - stillCentreX;
+
+        const deplacementY =
+            headerCentreY - stillCentreY + 5;
+
+        // Commence le fade du fond noir
+        document.querySelector(".intro").classList.add("terminee");
+
+        // Commence le déplacement du logo
+        logoStill.style.transform =
+            `translate(${deplacementX}px, ${deplacementY}px)`;
+
+        // La page commence à apparaître
+        conteneurSite.style.opacity = "1";
+
+        // Attend que le logo ait atteint le header
+        setTimeout(function () {
+
+            // Le frame est maintenant arrivé au header.
+            // La page et le frame disparaissent simultanément.
+            conteneurSite.style.opacity = "1";
+            logoStill.style.opacity = "0";
+
+            // Le fond noir de l'intro disparaît également.
+            document.querySelector(".intro").classList.add("terminee");
+
+        }, 1200);
+
+    }, 50);
+
+}, 1800);
+
 // FAQ
 const questionsFAQ = document.querySelectorAll(".questionFAQ")
 
