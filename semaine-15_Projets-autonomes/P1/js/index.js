@@ -1,4 +1,6 @@
-// Intro
+// ====================
+// INTRO
+// ====================
 const logoAnime = document.querySelector(".logo-intro-anime");
 const logoStill = document.querySelector(".logo-intro-still");
 const logoHeader = document.querySelector(".header-logo");
@@ -56,25 +58,14 @@ setTimeout(function () {
         // La page commence à apparaître
         conteneurSite.style.opacity = "1";
 
-        // Attend que le logo ait atteint le header
-        setTimeout(function () {
-
-            // Le frame est maintenant arrivé au header.
-            // La page et le frame disparaissent simultanément.
-            conteneurSite.style.opacity = "1";
-            logoStill.style.opacity = "0";
-
-            // Le fond noir de l'intro disparaît également.
-            document.querySelector(".intro").classList.add("terminee");
-
-        }, 1200);
-
     }, 50);
 
-}, 1800);
+}, 2000);
 
+// ====================
 // FAQ
-const questionsFAQ = document.querySelectorAll(".questionFAQ")
+// ====================
+const questionsFAQ = document.querySelectorAll(".questionFAQ");
 
 questionsFAQ.forEach(questionFAQ => {
     const question = questionFAQ.querySelector("h3");
@@ -98,7 +89,9 @@ questionsFAQ.forEach(questionFAQ => {
 });
 
 
-// Météo API
+// ====================
+// MÉTÉO API
+// ====================
 const btnMeteo = document.querySelector("#btnMeteo");
 const carteMeteo = document.querySelector("#carte-meteo")
 const messageMeteo = document.querySelector("#message-meteo")
