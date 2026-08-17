@@ -492,8 +492,73 @@ footer {
 
 
 /* horaire.html */
+.grille-horaire {
+    display: grid;
+    grid-template-columns: 80px repeat(7, 1fr);
+    grid-template-rows: 60px repeat(5, 80px);
+
+    width: 90%;
+    max-width: 2200px;
+    margin: 0 auto;
+}
+
+.date-column {
+    display: grid;
+    grid-row: 1 / -1;
+    grid-template-rows: subgrid;
+    border: 2px solid var(--cartes-sections);
+}
+
+.date {
+    margin: 0;
+    color: var(--titres-texte-important);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-column {
+    display: grid;
+    grid-row: 1 / -1;
+    grid-template-rows: subgrid;
+}
 
 
+.time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-discret);
+}
+
+.time-slot {
+    border: 2px solid var(--cartes-sections);
+}
+
+.show {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: grey;
+}
+
+.show-artist {
+    color: var(--titres-texte-important);
+}
+
+/* .show.moon {
+    border-left: 4px solid;
+}
+
+.show.sunset {
+    border-left: 4px solid;
+} */
 
 /* form.html */
 .main-form {

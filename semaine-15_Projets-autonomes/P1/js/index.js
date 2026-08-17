@@ -187,7 +187,7 @@ function formaterJour(jour, index) {
             mois - 1,
             jourMois
         );
-        nomJour = date.toLocaleDateString("fr-FR", {
+        nomJour = date.toLocaleDateString("fr-CA", {
             weekday: "long", day: "numeric", month: "long"
         });
     }
