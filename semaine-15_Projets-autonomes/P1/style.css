@@ -855,6 +855,10 @@ form input[type="email"] {
         margin-top: 30px;
     }
 
+    #a-propos p:not(:first-of-type) {
+        display: none;
+    }
+
     /* ARTISTES */
     #artistes-vedette {
         margin-top: 50px;
