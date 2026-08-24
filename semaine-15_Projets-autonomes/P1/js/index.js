@@ -100,28 +100,22 @@ const urlMeteo = "https://api.open-meteo.com/v1/forecast?latitude=45.5088&longit
 
 let weatherCodes
 
-// initMeteo() lance les deux fonctions nécessaires en ordre pour démarrer la météo
-async function initMeteo() {
-    await chargerCodesMeteo();
-    await chargerMeteo();
-}
-
-// On vérifie si les codes météo existent déjà, sinon on les récupère dans le JSON
-async function chargerCodesMeteo() {
-    if (!weatherCodes) {
-        const response = await fetch("js/json/weatherCodes.json");
-        weatherCodes = await response.json();
-    }
-}
-
 async function chargerMeteo() {
     btnMeteo.disabled = true;
     messageMeteo.textContent = "Chargement de la météo...";
     try {
+        // On vérifie si les codes météo existent déjà, sinon on les récupère dans le JSON
+        if (!weatherCodes) {
+            const response = await fetch("js/json/weatherCodes.json");
+            weatherCodes = await response.json();
+        }
+
         const response = await fetch(urlMeteo);
+
         if (!response.ok) {
             throw new Error("Erreur lors de la récupération de la météo");
         }
+
         const data = await response.json();
         afficherMeteo(data);
         messageMeteo.textContent = texteParDefaut;
@@ -188,7 +182,7 @@ function formaterJour(jour, index) {
 }
 
 // Lancement de la météo dès le chargement de la page
-initMeteo();
+chargerMeteo();
 
 // Actualise la météo
 btnMeteo.addEventListener('click', chargerMeteo);
